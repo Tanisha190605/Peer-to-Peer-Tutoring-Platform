@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Seat Availability</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>Tutor Dashboard</header>
+  <nav>
+    <a href="viewrequest.html">View Requests</a>
+    <a href="availability.html">Seat Availability</a>
+    <a href="lectures.html">My Lectures</a>
+  </nav>
+
+  <main class="card">
+    <h2>Set Seat Availability</h2>
+    <form id="availability-form">
+      <div class="day-card">
+        <h4>Monday</h4>
+        <label>Start Time:</label>
+        <input type="time">
+        <label>End Time:</label>
+        <input type="time">
+        <label>Seats Available:</label>
+        <input type="number" min="1">
+      </div>
+      <button type="submit" class="submit-btn">Save Seat Availability</button>
+    </form>
+  </main>
+</body>
+</html>

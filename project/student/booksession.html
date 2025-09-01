@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Session</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      nav {
+        background-color: #333;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 60px;
+      }
+
+      nav a {
+        display: block;
+        padding: 1rem;
+        color: white;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: #575757;
+      }
+
+      main {
+        margin-left: 220px;
+        padding: 2rem;
+      }
+
+      .card {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>Book a Session</header>
+    <nav>
+      <a href="studentdashboard.html">Dashboard</a>
+      <a href="searchtutor.html">Search Tutors</a>
+      <a href="booksession.html">Book Session</a>
+      <a href="mysession.html">My Sessions</a>
+    </nav>
+    <main>
+      <div class="card">
+        <h2>Book a New Session</h2>
+        <form id="bookform">
+          <label for="tutor">Tutor Name:</label><br />
+          <input type="text" id="tutor" name="tutor" required /><br /><br />
+          <label for="subject">Subject:</label><br />
+          <input type="text" id="subject" name="subject" required/><br /><br />
+          <label for="datetime">Date & Time:</label><br />
+          <input type="datetime-local" id="datetime" name="datetime" required/><br /><br />
+          <button type="submit">Book</button>
+        </form>
+        <p id="message"></p>
+      </div>
+    </main>
+    <script>
+      const form = document.getElementById("bookform");
+      const message = document.getElementById("message");
+      form.addEventListener("submit",function(e){
+        e.preventDefault();
+        const tutor = document.getElementById("tutor").value;
+        const subject = document.getElementById("subject").value;
+        const datetime = document.getElementById("datetime").value;
+  
+      if(!tutor || !subject || !datetime){
+        message.style.color = "red";
+        message.textContent = "please fill details";
+        return;
+      }
+      const booking = {tutor,subject,datetime};
+      let bookings = JSON.parse(localStorage.getItem("bookings"))|| [];
+        if (!Array.isArray(bookings)) {
+      bookings = [];
+    }
+        bookings.push(booking);
+        localStorage.setItem('bookings',JSON.stringify(bookings));
+        message.style.color = "green";
+        message.textContent = "sucess";
+    });
+    document.getElementById("bookform").addEventListener('submit',function(e){
+      e.preventDefault();
+      const confirmed = confirm("are you sure to book this session?");
+      if(confirmed){
+        window.location.href = "confirm.html";
+      }
+
+    })
+    </script>
+  </body>
+</html>

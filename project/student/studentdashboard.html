@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="../css/student.css" />
+    <style>
+    
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      nav {
+        background-color: #333;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 60px;
+      }
+
+      nav a {
+        display: block;
+        padding: 1rem;
+        color: white;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: #575757;
+      }
+
+      main {
+        margin-left: 220px;
+        padding: 2rem;
+      }
+
+      .card {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>Student Dashboard</header>
+    <nav>
+      <a href="#" id="Dashboard">Dashboard</a>
+      <a href= "#" id="searchtutor">Search Tutors</a>
+      <a href= "#" id="book-session">Book Session</a>
+      <a href= "#" id="my-sessions">My Sessions</a>
+    </nav>
+    <main>
+      <div class="card">
+        <h2>Welcome back, Student!</h2>
+        <p>You have 2 upcoming sessions.</p>
+      </div>
+      <div class="card">
+        <h3>Next Session</h3>
+        <p>Math with Anmol Sharma - Aug 2, 4:00 PM</p>
+      </div>
+    </main>
+    <script>
+      document.getElementById("searchtutor").addEventListener("click",function(e){
+          e.preventDefault();
+          window.location.href = "searchtutor.html";
+      })
+      document.getElementById("book-session").addEventListener("click",function(e){
+        e.preventDefault();
+        window.location.href = "booksession.html";
+      })
+    </script>
+  </body>
+</html>

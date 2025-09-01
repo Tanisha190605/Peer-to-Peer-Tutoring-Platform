@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Search Tutors</title>
+    <link rel="stylesheet" href="../css/student.css" />
+    <style>
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background: #007bff;
+       color: #fff;
+       text-decoration: none;
+      border-radius: 5px;
+ }
+
+    .btn:hover {
+      background: #0056b3;
+    }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f9f9f9;
+        color: #333;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      nav {
+        background-color: #333;
+        width: 200px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 60px;
+      }
+
+      nav a {
+        display: block;
+        padding: 1rem;
+        color: white;
+        text-decoration: none;
+      }
+
+      nav a:hover {
+        background-color: #575757;
+      }
+
+      main {
+        margin-left: 220px;
+        padding: 2rem;
+      }
+
+      .card {
+        background: white;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <header>Search Tutors</header>
+    <nav>
+      <a href="studentdashboard.html">Dashboard</a>
+      <a href="searchtutor.html">Search Tutors</a>
+      <a href="booksession.html">Book Session</a>
+      <a href="mysession.html">My Sessions</a>
+    </nav>
+    <main>
+      <div class="card">
+        <h2>Available Tutors</h2>
+        <div class="search bar">
+          <input type="text" id="searchinput" placeholder="search by name or subject">
+        </div>
+        <div class="tutorscontainrs" id="tutorlist"></div>
+      </div>
+    </main>
+    <script>
+      const tutors = [
+      { name: "Anmol Sharma", subject: "Math, Physics" },
+      { name: "Satyaprakash Sinha", subject: "Chemistry, Biology" },
+      { name: "Priyanka Gupta", subject: "English" }
+    ]
+    const tutorList = document.getElementById("tutorlist");
+    function displayTutors(list) {
+     tutorList.innerHTML = "";
+      if (list.length === 0) {
+        tutorList.innerHTML = "<p>No tutors found.</p>";
+         return;
+  }
+  tutorlist.innerHTML = list.map(tutor => `
+    <div class="tutor-card">
+      <h3>${tutor.name}</h3>
+      <p>Subject: ${tutor.subject}</p>
+      <a href="booksession.html" class="btn">Book Session</a>
+    </div>
+  `).join("");
+}
+displayTutors(tutors);
+    </script>
+  </body>
+</html>

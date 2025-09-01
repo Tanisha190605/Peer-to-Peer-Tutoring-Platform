@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Session Requests</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>Tutor Dashboard</header>
+  <nav>
+    <a href="viewrequest.html">View Requests</a>
+    <a href="availability.html">Seat Availability</a>
+    <a href="lectures.html">My Lectures</a>
+  </nav>
+
+  <main class="card">
+    <h2>Session Requests</h2>
+    <div class="request-item">
+      <p><strong>Student:</strong> Teesha</p>
+      <p><strong>Subject:</strong> Math</p>
+      <button class="accept-btn" onclick="acceptRequest(this)">Accept</button>
+      <button class="reject-btn" onclick="rejectRequest(this)">Reject</button>
+    </div>
+    <div class="request-item">
+      <p><strong>Student:</strong> Palak</p>
+      <p><strong>Subject:</strong> Physics</p>
+      <button class="accept-btn" onclick="acceptRequest(this)">Accept</button>
+      <button class="reject-btn" onclick="rejectRequest(this)">Reject</button>
+    </div>
+  </main>
+</body>
+</html>
