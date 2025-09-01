@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register - Scrum Peer</title>
+    <link rel="stylesheet" href="register.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #121827;
+        color: #fff;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #111;
+      }
+
+      .logo {
+        color: #00ffff;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .nav-links li a:hover {
+        color: #00ffff;
+      }
+
+      .register-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90vh;
+        padding: 20px;
+      }
+
+      .register-box {
+        background-color: #1f2937;
+        padding: 2rem;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 500px;
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+      }
+
+      .register-box h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .toggle-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .toggle {
+        padding: 0.4rem 1rem;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        background-color: #374151;
+        color: white;
+        font-weight: bold;
+        transition: background 0.3s;
+      }
+
+      .toggle.active,
+      .toggle:hover {
+        background-color: #00d1d1;
+        color: #000;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .name-fields {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .name-fields .form-group {
+        flex: 1;
+      }
+
+      form label {
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+
+      form input {
+        width: 100%;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #374151;
+        color: white;
+      }
+
+      form input::placeholder {
+        color: #9ca3af;
+      }
+
+      .signup-btn {
+        background-color: #00d1d1;
+        color: #000;
+        padding: 0.8rem;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .signup-btn:hover {
+        background-color: #00b3b3;
+      }
+
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">Scrum Peer</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact</a></li>
+          <li><a href="signup.html">Sign Up</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="register-section">
+      <div class="register-box">
+        <h2>Register Here</h2>
+
+        <div class="toggle-buttons">
+          <button type="button" class="toggle active" id="studentBtn">Student</button>
+          <button type="button" class="toggle" id="tutorBtn">Tutor</button>
+        </div>
+
+        <!-- Student Form -->
+        <form id="studentForm">
+          <div class="name-fields">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" placeholder="Enter first name" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Enter last name" required />
+            </div>
+          </div>
+
+          <label>Email *</label>
+          <input type="email" placeholder="Enter email" required />
+
+          <label>Password *</label>
+          <input type="password" placeholder="Enter password" required />
+
+          <label>Confirm Password *</label>
+          <input type="password" placeholder="Confirm password" required />
+
+          <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+
+        <!-- Tutor Form -->
+        <form id="tutorForm" class="hidden">
+          <div class="name-fields">
+            <div class="form-group">
+              <label>First Name *</label>
+              <input type="text" placeholder="Enter first name" required />
+            </div>
+            <div class="form-group">
+              <label>Last Name *</label>
+              <input type="text" placeholder="Enter last name" required />
+            </div>
+          </div>
+
+          <label>Email *</label>
+          <input type="email" placeholder="Enter email" required />
+
+          <label>Password *</label>
+          <input type="password" placeholder="Enter password" required />
+
+          <label>Confirm Password *</label>
+          <input type="password" placeholder="Confirm password" required />
+
+          <label>Subject Expertise *</label>
+          <input type="text" placeholder="e.g. Math, Physics" required />
+
+          <label>Experience (in years) *</label>
+          <input type="number" placeholder="Enter years of experience" required />
+
+          <button type="submit" class="signup-btn">Sign Up</button>
+        </form>
+      </div>
+    </section>
+
+    <script>
+      const studentBtn = document.getElementById("studentBtn");
+      const tutorBtn = document.getElementById("tutorBtn");
+      const studentForm = document.getElementById("studentForm");
+      const tutorForm = document.getElementById("tutorForm");
+
+      studentBtn.addEventListener("click", () => {
+        studentBtn.classList.add("active");
+        tutorBtn.classList.remove("active");
+        studentForm.classList.remove("hidden");
+        tutorForm.classList.add("hidden");
+      });
+
+      tutorBtn.addEventListener("click", () => {
+        tutorBtn.classList.add("active");
+        studentBtn.classList.remove("active");
+        tutorForm.classList.remove("hidden");
+        studentForm.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>

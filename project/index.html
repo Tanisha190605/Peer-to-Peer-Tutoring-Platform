@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrum Peer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+
+      
+      .navbar {
+        background-color: #111;
+        color: #00e0ff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: bold;
+      }
+
+      .nav-links {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+      }
+
+      .nav-links li a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.3s;
+      }
+
+      .nav-links li a:hover {
+        color: #00e0ff;
+      }
+
+      
+      .hero {
+        background: #00321b url("https://i.imgur.com/3FWgLdt.png") no-repeat
+          center bottom;
+        background-size: cover;
+        color: white;
+        height: calc(100vh - 60px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 50px;
+        position: relative;
+      }
+
+      .hero-content {
+        text-align: center;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+
+      .hero button {
+        background-color: #3277ff;
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        font-size: 16px;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .hero button:hover {
+        background-color: #255cd8;
+      }
+
+      .hero-image img {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+        width: 300px;
+        max-width: 40vw;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+  <header>
+    <div class="navbar">
+      <div class="logo">SCRUM PEER</div>
+      <ul class="nav-links">
+        <li><a href="#" id="Home">Home</a></li>
+        <li><a href="#" id="AboutUs">About Us</a></li>
+        <li><a href="#" id="Contact">Contact</a></li>
+        <li><a href="#" id="SignUp">Sign Up</a></li>
+        <li><a href="#" id="Login">Login</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to SCRUM PEER</h1>
+      <p>Your journey to excellence starts here</p>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("AboutUs").addEventListener("click", function(e) {
+      e.preventDefault();
+      window.location.href = "AboutUs.html"; 
+    });
+    document.getElementById("Contact").addEventListener("click",function(e){
+      e.preventDefault();
+      window.location.href = "Contactus.html";
+    });
+    document.getElementById("SignUp").addEventListener("click",function(e){
+      e.preventDefault();
+      window.location.href = "signup.html";
+    })
+    document.getElementById("Login").addEventListener("Click",function(e){
+      e.preventDefault();
+      window.location.href = "login.html";
+    })
+  </script>
+</body>
+</html>
